@@ -37,7 +37,7 @@ The generated shader can be used for processing vertices or fragments depending 
 A shader object can be created by calling the *glCreateShader()* function. The prototype of the function is
 
 ```GLSL
-GLuint glCreateShader(GLenum type)
+GLuint glCreateShader(GLenum type);
 ```
 
 The *type* can take any one of the following values
@@ -52,3 +52,23 @@ The return value is
 
 * 0 in case of an error (or)
 * > 0 
+
+**Associating Shader Source with Shader Object**
+
+After a shader object is created, the source code of the shader has to be associated with the shader object by using the *glShaderSource()* function.
+
+```GLSL
+void glShaderSource(GLunit shader, GLsizei count, const GLchar **string, const GLint *length);
+```
+
+The parameters are
+
+* *shader*: The shader object created in the previous step
+* *count*: The count of the number of *GLchar* strings that comprise the shader source
+* *string*: An array of *GLchar* strings that comprise the shader source
+* *length*: The *length* can take any one of the following values
+    * NULL: implies that each *GLchar* string in strings is null-terminated 
+    * > 0: implies the number of characters in the corresponding *GLchar* string entry in the *strings* array
+    * < 0: implies the number of characters in the corresponding *GLchar* string entry in the *strings* array which are null-terminated
+    
+
