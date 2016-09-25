@@ -30,4 +30,25 @@ After the compilation, verify that the shader was compiled successfully.
 After the linking process, verify that the shader program was linked successfully. 
 The generated shader can be used for processing vertices or fragments depending on what kind of shader it is.
 
+### OpenGL API for Shader Compilation and Linking
 
+**Creating a Shader Object**
+
+A shader object can be created by calling the *glCreateShader()* function. The prototype of the function is
+
+```GLSL
+GLuint glCreateShader(GLenum type)
+```
+
+The *type* can take any one of the following values
+
+* GL_VERTEX_SHADER
+* GL_FRAGMENT_SHADER
+* GL_TESS_CONTROL_SHADER
+* GL_TESS_EVALUATION_SHADER
+* GL_GEOMETRY_SHADER
+
+The return value is 
+
+* 0 in case of an error (or)
+* > 0 
